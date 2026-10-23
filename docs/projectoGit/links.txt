@@ -1,0 +1,28 @@
+caixa para cliente:
+https://www.printables.com/model/1599905-meshtastic-desk-node-nrf52840-dr-lr30
+
+caixa para repetidor:
+https://www.leroymerlin.pt/produtos/caixa-estanque-paredes-lisas-166x116x70mm-ip66-cinzento-jsl-15918350.html
+
+painel solar:
+https://pt.aliexpress.com/item/1005009273915639.html
+
+módulos lora com/sem antena e com/sem mcu:
+https://pt.aliexpress.com/item/1005009103014298.html
+
+protecção das baterias:
+https://pt.aliexpress.com/item/1005006607851467.html
+
+
+carga de baterias com TC4056:
+https://pt.aliexpress.com/item/1005011829254684.html
+
+
+carga de baterias com CN3791:
+https://pt.aliexpress.com/item/1005004140259016.html
+
+suporte para baterias 2p 18650:
+https://pt.aliexpress.com/item/1005003099571328.html
+
+
+

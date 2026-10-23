@@ -1,0 +1,5 @@
+; Copiar para platformio.local.ini antes da primeira compilação.
+[platformio]
+default_envs = nicenano_dx_lr30_repeater
+; Para companion BLE, substituir pelo ambiente:
+; default_envs = nicenano_dx_lr30_companion_radio_ble
