@@ -602,6 +602,16 @@ não registos de duas placas diferentes.
 
 ### Implementação autorizada
 
+**Atualização de 24/10/2026:** a pedido do utilizador, foram retirados os filtros
+por presença de USB e modo de alimentação. `getBattMilliVolts()` passa a devolver
+sempre a leitura de VDDH, mantendo a aquisição e conversão descritas abaixo.
+O comando `battery` mostra `VDDH: ... mV; USB VBUS: present/absent`.
+O estado e a telemetria também recebem o valor sem filtro, embora a aplicação
+possa continuar a identificar esse campo como bateria. A deteção USB consulta
+`USBREGSTATUS.VBUSDETECT`, através do SoftDevice quando ativo, ou diretamente
+no registo quando inativo; deteta alimentação VBUS, não uma ligação de dados.
+As descrições de indisponibilidade por USB abaixo documentam a versão anterior.
+
 O utilizador confirmou que a bateria está ligada diretamente a **B+ e B−**.
 Anteriormente, `getBattMilliVolts()` devolvia sempre `0`, porque não havia um
 divisor externo validado. A variante passou a medir a entrada interna
@@ -663,3 +673,33 @@ contemporânea da medição e uma comparação isolada não distingue ganho de o
 Ficou combinado esperar pela noite e comparar várias leituras recentes de
 `battery` com o multímetro em B+/B−, aproximadamente ao mesmo tempo e com USB
 desligado. À data deste registo, esses resultados ainda não foram fornecidos.
+
+## Recuperação do companion e fotografias — 24/10/2026
+
+Após instalar OTAFIX no companion com o firmware inicial (sem medição de
+bateria), o utilizador observou falha de enumeração USB, código 43, e ausência
+de BLE. O bootloader continuava a funcionar: por duplo reset apresentava
+ProMicro NRF52840, VID 239A/PID 00B3, interfaces nRF Serial e nRF UF2.
+O problema também ocorreu numa porta direta do PC; não ficou explicado apenas
+pelo hub. Regravar o companion sem limpar os dados não resolveu.
+
+Foi preparado um ambiente separado de diagnóstico por LED. Não foi reportada
+uma sequência de diagnóstico desse firmware. O utilizador optou depois pela
+limpeza autorizada dos dados persistentes.
+
+O utilitário específico `nicenano_dx_lr30_clear_config` verifica o mapa de
+flash e o endereço do bootloader antes de apagar apenas ExtraFS
+(`0xD4000–0xECFFF`) e InternalFS (`0xED000–0xF3FFF`). Não inicializa o rádio
+nem inclui apagamento do SoftDevice, UICR ou bootloader. Verifica a região
+apagada antes de indicar sucesso com duas piscadelas e pausa.
+
+O utilizador confirmou as duas piscadelas e a COM26. Seguiu-se recompilação
+completa do companion normal, instalação do UF2 e confirmação de funcionamento.
+A sequência limpeza + reinstalação resolveu, sem identificar exatamente quais
+dados causavam a falha. O repetidor noutro dispositivo com o mesmo hardware
+não apresentou esse problema após atualizar o bootloader.
+
+Foram acrescentadas ao guia três fotografias próprias fornecidas pelo utilizador:
+`companion chip lora.jpg`, `companion pinout.jpg` e `conjunto companion.jpg`.
+Mostram o DX-LR30-900M22S, o verso do adaptador DX-PJ27-V1.2 com os sinais
+identificados e a montagem com a caixa aberta.

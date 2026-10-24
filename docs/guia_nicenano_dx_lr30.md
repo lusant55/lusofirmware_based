@@ -341,6 +341,59 @@ ter terminado e verifica o arranque da aplicação.
 
 ## 4. Montagem do cliente/companion
 
+### Fotografias da montagem realizada
+
+Fotografias tiradas e fornecidas pelo utilizador. Mostram o cliente real,
+o suporte interior e a caixa impressa, cuja adaptação foi validada nesta montagem.
+
+[![Conjunto do companion, caixa aberta, suporte interior e fixações](projectoGit/conjunto%20companion.jpg)](projectoGit/conjunto%20companion.jpg)
+
+Vista do conjunto antes de fechar a caixa, com a tampa e as fixações ao lado.
+
+[![DX-LR30-900M22S instalado no suporte interior do companion](projectoGit/companion%20chip%20lora.jpg)](projectoGit/companion%20chip%20lora.jpg)
+
+Detalhe do módulo DX-LR30-900M22S e do conector de antena SMA.
+
+[![Verso do adaptador DX-PJ27-V1.2 com nomes dos sinais e cablagem do companion](projectoGit/companion%20pinout.jpg)](projectoGit/companion%20pinout.jpg)
+
+Esta fotografia do verso mostra as inscrições dos sinais no adaptador
+**DX-PJ27-V1.2**. `NRST` corresponde ao RESET do rádio na tabela de ligações.
+Usar as inscrições e a tabela como referência, não apenas as cores dos fios.
+Clica nas fotografias para abrir em tamanho completo.
+
+### Recuperação após atualização do bootloader OTAFIX
+
+Em 24/10/2026, o companion deixou de apresentar BLE e USB válido após atualizar
+o bootloader para OTAFIX. O firmware inicialmente instalado era a primeira
+versão do companion, sem medição de bateria; a nova rotina ADC não estava
+instalada quando o problema apareceu.
+
+O duplo reset continuava a apresentar a unidade UF2 e a interface série do
+bootloader. Regravar o companion, por si só, não resolveu. A sequência que
+resolveu nesta placa foi:
+
+1. Entrar no bootloader USB por duplo reset.
+2. Instalar o utilitário específico de limpeza de **InternalFS e ExtraFS**
+   preparado para o mapa de memória desta variante. Esta operação apaga
+   identidade, contactos, canais, preferências e outros dados nessas áreas.
+3. Aguardar o sinal de conclusão: **duas piscadelas curtas e uma pausa**, em
+   repetição. O utilitário verifica que as áreas foram apagadas. O utilizador
+   observou esse padrão e a porta COM26, pertencente ao utilitário de limpeza.
+4. Entrar novamente no bootloader e instalar o **UF2 normal do companion**.
+5. Fazer power cycle completo após terminar a gravação e voltar a configurar
+   o companion. O utilizador confirmou que voltou a funcionar.
+
+O utilitário usado apagou `0xD4000–0xECFFF` (ExtraFS) e
+`0xED000–0xF3FFF` (InternalFS), preservando SoftDevice e bootloader.
+Não usar um apagamento genérico de toda a flash. Os nomes e o padrão do LED
+acima referem-se ao utilitário local desta sessão, não a todos os programas
+de limpeza existentes.
+
+O resultado aponta para dados persistentes envolvidos na falha, mas não
+identifica um ficheiro ou causa exata: foram limpas ambas as áreas e a aplicação
+foi reinstalada. O repetidor, noutro dispositivo com o mesmo hardware, não
+apresentou a mesma falha. Não foi necessário voltar ao bootloader anterior.
+
 ### Caixa
 
 [Projeto no Printables — Meshtastic Desk Node nRF52840 / DR-LR30](https://www.printables.com/model/1599905-meshtastic-desk-node-nrf52840-dr-lr30).
