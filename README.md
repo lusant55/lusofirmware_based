@@ -1,5 +1,7 @@
 # LusoFW — nRF52840 + DX-LR30
 
+<a href="docs/projectoGit/conjunto%20companion.jpg"><img src="docs/projectoGit/conjunto%20companion.jpg" alt="Conjunto do companion com a caixa aberta" width="500"></a>
+
 Adaptações para repetidor e companion BLE, mantendo o nome e a versão
 existentes do LusoFW. Origem: [MeshCore](https://github.com/meshcore-dev/MeshCore)
 → [Meshcore-Portugal/lusofw](https://github.com/Meshcore-Portugal/lusofw)

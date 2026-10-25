@@ -703,3 +703,10 @@ Foram acrescentadas ao guia três fotografias próprias fornecidas pelo utilizad
 `companion chip lora.jpg`, `companion pinout.jpg` e `conjunto companion.jpg`.
 Mostram o DX-LR30-900M22S, o verso do adaptador DX-PJ27-V1.2 com os sinais
 identificados e a montagem com a caixa aberta.
+
+### Confirmação de atualização do companion por BLE
+
+Após a recuperação, o utilizador confirmou que também realizou com sucesso
+uma atualização do companion por BLE usando o mesmo `firmware.zip`.
+Foi uma reinstalação do mesmo firmware, sem mudança de versão, confirmando
+que a atualização por BLE funcionou neste dispositivo com o bootloader OTAFIX.

@@ -11,7 +11,7 @@ Origem do software: [MeshCore](https://github.com/meshcore-dev/MeshCore) →
 
 ### Identificação visual da placa
 
-![Frente e verso da placa vermelha TENSTAR ROBOT ProMicro nRF52840, com as inscrições dos pinos](projectoGit/nrf%20top_bottom_red.jpg)
+<a href="projectoGit/nrf%20top_bottom_red.jpg"><img src="projectoGit/nrf%20top_bottom_red.jpg" alt="Frente e verso da placa vermelha TENSTAR ROBOT ProMicro nRF52840, com as inscrições dos pinos" width="450"></a>
 
 A fotografia mostra as duas faces da placa usada como referência nesta
 montagem. As inscrições junto aos pads permitem localizar os sinais da
@@ -20,7 +20,7 @@ tabela de ligações mais abaixo. Por exemplo, `100` corresponde a P1.00 e
 
 ### Esquema elétrico da placa nRF52840
 
-[![Esquema elétrico da placa ProMicro nRF52840: alimentação, carregador, USB, microcontrolador e conectores](projectoGit/nfr52840.jpg)](projectoGit/nfr52840.jpg)
+<a href="projectoGit/nfr52840.jpg"><img src="projectoGit/nfr52840.jpg" alt="Esquema elétrico da placa ProMicro nRF52840: alimentação, carregador, USB, microcontrolador e conectores" width="700"></a>
 
 Clica na imagem para abrir o esquema em tamanho completo. O ficheiro fornecido
 mostra o regulador ME6217, o carregador da bateria, o circuito USB e as ligações
@@ -165,14 +165,14 @@ validada com os parâmetros atuais.
 
 #### DX-LR30-900M22S — versão usada neste projeto
 
-![DX-LR30-900M22S, módulo isolado e montado numa placa adaptadora com conector SMA](projectoGit/dx-lr30%20900mhz.webp)
+<a href="projectoGit/dx-lr30%20900mhz.webp"><img src="projectoGit/dx-lr30%20900mhz.webp" alt="DX-LR30-900M22S, módulo isolado e montado numa placa adaptadora com conector SMA" width="450"></a>
 
 À esquerda vê-se o módulo isolado; à direita, o módulo numa placa adaptadora
 azul com conector SMA e duas filas de contactos.
 
 #### DX-LR30-433M22S — identificação da outra versão
 
-![DX-LR30-433M22S em placa adaptadora azul com conector SMA, visto de vários ângulos](projectoGit/dx-lr30%20433mhz.jpg)
+<a href="projectoGit/dx-lr30%20433mhz.jpg"><img src="projectoGit/dx-lr30%20433mhz.jpg" alt="DX-LR30-433M22S em placa adaptadora azul com conector SMA, visto de vários ângulos" width="450"></a>
 
 Confirma a referência escrita na blindagem ao escolher o módulo. As imagens
 não mostram os nomes de todos os contactos do adaptador, pelo que não permitem
@@ -346,15 +346,15 @@ ter terminado e verifica o arranque da aplicação.
 Fotografias tiradas e fornecidas pelo utilizador. Mostram o cliente real,
 o suporte interior e a caixa impressa, cuja adaptação foi validada nesta montagem.
 
-[![Conjunto do companion, caixa aberta, suporte interior e fixações](projectoGit/conjunto%20companion.jpg)](projectoGit/conjunto%20companion.jpg)
+<a href="projectoGit/conjunto%20companion.jpg"><img src="projectoGit/conjunto%20companion.jpg" alt="Conjunto do companion, caixa aberta, suporte interior e fixações" width="450"></a>
 
 Vista do conjunto antes de fechar a caixa, com a tampa e as fixações ao lado.
 
-[![DX-LR30-900M22S instalado no suporte interior do companion](projectoGit/companion%20chip%20lora.jpg)](projectoGit/companion%20chip%20lora.jpg)
+<a href="projectoGit/companion%20chip%20lora.jpg"><img src="projectoGit/companion%20chip%20lora.jpg" alt="DX-LR30-900M22S instalado no suporte interior do companion" width="450"></a>
 
 Detalhe do módulo DX-LR30-900M22S e do conector de antena SMA.
 
-[![Verso do adaptador DX-PJ27-V1.2 com nomes dos sinais e cablagem do companion](projectoGit/companion%20pinout.jpg)](projectoGit/companion%20pinout.jpg)
+<a href="projectoGit/companion%20pinout.jpg"><img src="projectoGit/companion%20pinout.jpg" alt="Verso do adaptador DX-PJ27-V1.2 com nomes dos sinais e cablagem do companion" width="450"></a>
 
 Esta fotografia do verso mostra as inscrições dos sinais no adaptador
 **DX-PJ27-V1.2**. `NRST` corresponde ao RESET do rádio na tabela de ligações.
@@ -393,6 +393,10 @@ O resultado aponta para dados persistentes envolvidos na falha, mas não
 identifica um ficheiro ou causa exata: foram limpas ambas as áreas e a aplicação
 foi reinstalada. O repetidor, noutro dispositivo com o mesmo hardware, não
 apresentou a mesma falha. Não foi necessário voltar ao bootloader anterior.
+
+Após a recuperação, o utilizador confirmou também uma atualização do companion
+por BLE com o mesmo `firmware.zip`. Este ensaio confirmou a transferência e
+reinstalação do firmware por BLE, sem mudança de versão.
 
 ### Caixa
 
